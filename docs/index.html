@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="icon" href="../logo.png" type="images/png">
+  <script src="../elements.js"></script>
+  <title>FluentWeb docs</title>
+  <style>
+    .sidebar ul li {
+      list-style-type: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <h1 style="margin-left: 40px;">FluentWeb docs</h1>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="getstarted.html">Get started</a></li>
+      <li><a href="custom.html">Customize</a></li>
+      <li><a href="elements.html">Elements</a></li>
+    </ul>
+  </div>
+  <main class="after-sidebar">
+    <img src="../logo.png" alt="Logo" width="120" height="120">
+    <h1>Welcome to the docs!</h1>
+    <p>These will teach you on how FluentWeb works, what is it and how to use it in your wesite. FluentWeb is a CSS + JS only recreation of Microsoft's FluentUI / WinUI - no React nor npm needed!</p>
+    <section class="card">
+      <h2>🤔 Why FluentWeb?</h2>
+      <p>FluentWeb is like a sun ray peeking out thru the thicc cloud layer ofthe npm, React and BEM mess. No class soups, no trillion dependencies, not even React's... poop.</p>
+    </section>
+    <section class="card">
+      <h2>🖥 Demo</h2>
+      <p>Here is a quick taste of the design:</p>
+      <div class="setting"><label for="demo-btn">Button</label><button id="demo-btn" name="demo-btn">Click me!</button></div>
+      <div class="setting"><label for="demo-textbox">Textbox</label><input type="text" placeholder="Enter something..." id="demo-textbox" name="demo-textbox"></div>
+      <div class="setting"><label for="demo-checkbox">Checkbox</label><input type="checkbox" id="demo-checkbox" name="demo-checkbox" aria-label=""></div>
+    </section>
+    <section class="card">
+      <h2>💾 Ready to jump in?</h2>
+      <p>Let's GOOO!!!</p>
+      <button class="accent" onclick="window.location.href = 'getstarted.html'">Get started</button>
+    </section>
+    <div class="alert warning">
+      <h3>Sorry</h3>
+      <p>The docs aren't done yet. I'll finish it... hopefully. But no promises 😅</p>
+    </div>
+  </main>
+</body>
+</html>

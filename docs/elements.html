@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="icon" href="../logo.png" type="images/png">
+  <script src="../elements.js"></script>
+  <title>FluentWeb docs</title>
+  <style>
+    .sidebar ul li {
+      list-style-type: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <h1 style="margin-left: 40px;">FluentWeb docs</h1>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="getstarted.html">Get started</a></li>
+      <li><a href="custom.html">Customize</a></li>
+      <li><a href="elements.html">Elements</a></li>
+    </ul>
+  </div>
+  <main class="after-sidebar">
+    <h1>Elements</h1>
+    <p>Elements that have a gear icon need the <code>elements.js</code> script</p>
+    <div class="tabber">
+      <div class="tab">
+        Overview
+        <div class="tab-content">
+          <h2>Welcome to this part of the docs!</h2>
+          <p>Making it was tedious...</p>
+        </div>
+      </div>
+      <div class="tab">
+        Layout
+        <div class="tab-content">
+          <h2>Main, body, header and sidebar</h2>
+          Here is how these work in FluentWeb:
+          <ul>
+            <li>Use <code>class="image"</code> on body to make it the <code>--image</code> set in the CSS file.</li>
+            <li>Main with a <code>class="main-card"</code> to make it a card - great over images like the <code>&lt;body class="image"&gt;</code> thingy.</li>
+            <li>If you want a sidebar, use a div with the <code>sidebar</code> class. Note that it must be in the body before the main content and the main must have an <code>after-sidebar</code> class. If you prefer a compact sidebar, consider using the class <code>compact</code> class on the sidebar div alongside the <code>sidebar</code> class and replacing the main's  <code>after-sidebar</code> class with <code>after-compact-sidebar</code>.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tab">
+        Alerts, toasts and dialogs
+        <div class="tab-content">
+          <h2>Some stuff???</h2>
+          <h3>Alerts</h3>
+          <p>These are just inline messages that can be used with <code>&lt;div class="alert"&gt;</code></p>
+          <div class="alert">
+            <h3>Hi!</h3>
+            <p>Welcome to this app.</p>
+          </div>
+          <p>You can also use modifier classes like <code>success</code>, <code>warning</code> and <code>bad</code>. They look like this:</p>
+          <div class="alert success">
+            <h3>Approved!</h3>
+            <p>Your manager approved a day off for tomorrow</p>
+          </div>
+          <div class="alert warning">
+            <h3>Warning!</h3>
+            <p>Your subscription was cancelled. You can download your files until 1.9.2025 0:00, when they'll be deleted.</p>
+            <div class="button-row"><button>Renew subscription</button><button>Download files</button></div>
+          </div>
+          <div class="alert bad">
+            <h3>Wrong password</h3>
+            <p>The password is incorrect 🗿</p>
+          </div>
+          <h3>Toasts ⚙</h3>
+          <p>Use the <code>toast</code> function to show a toast message. Syntax:</p>
+          <pre class="codespace">
+toast(message: string, options: Object)</pre>
+          <p>Here are the options:</p>
+        </div>
+      </div>
+      <div class="tab">
+        Buttons
+        <div class="tab-content">
+          <h2>Buttons</h2>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

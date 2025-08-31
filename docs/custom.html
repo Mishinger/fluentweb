@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="icon" href="../logo.png" type="images/png">
+  <script src="../elements.js"></script>
+  <title>FluentWeb docs</title>
+  <style>
+    .sidebar ul li {
+      list-style-type: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <h1 style="margin-left: 40px;">FluentWeb docs</h1>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="getstarted.html">Get started</a></li>
+      <li><a href="custom.html">Customize</a></li>
+      <li><a href="elements.html">Elements</a></li>
+    </ul>
+  </div>
+  <main class="after-sidebar">
+    <h1>Customize the design</h1>
+    <p>Of course, the blue may not fit every app. Nor the styles may not be enough. So that's why there is this page. Here is what you can tweak:</p>
+    <details>
+      <summary>1. Accent color</summary>
+      <p>Change the 3 <code>--accent-color</code> variables to your brand color. The one in the defauult root and print should be the same, while the dark mode one can (but doesn't need to be) a bit lighter.</p>
+    </details>
+    <details>
+      <summary>2. New styles</summary>
+      <p>Want a shiny golden button for subscribing to the pro version of your app? Sure, do that - like this:</p>
+      <ol>
+        <li>Create a new color in the three roots - e.g. <code>--pro-color: #fd1;</code> for the light and print with <code>--pro-color: #fd5;</code> being the dark mode version.</li>
+        <li>Add the style - with this button example, it's like this:
+          <pre class="codespace css">button.pro {
+  color: var(--accent-text);
+  background-color: var(--success-color);
+  border-color: var(--success-color);
+}
+button.pro:hover {
+  background-color: color-mix(in srgb, var(--pro-color) 85%, var(--text-color) 15%);
+  border-color: color-mix(in srgb, var(--pro-color) 85%, var(--text-color) 15%);
+}         </pre>
+        </li>
+      </ol>
+    </details>
+    <details>
+      <summary>3. Changing the styles</summary>
+      <div class="alert warning">
+        <h3>Not reccomended</h3>
+        <p>You may break the Fluent design while tweaking the existing elements</p>
+      </div>
+      <p>If you are a power user, you can change the styles to your liking.</p>
+    </details>
+    <details>
+      <summary>4. Inline styles</summary>
+      <p>You can use inline styles to change things like layouts or add specific colors using <code>&lt;p style="color: #07f"&gt;Yay, I'm cyan!&lt;/&gt;</code></p>
+    </details>
+    <details>
+      <summary>5. Image</summary>
+      <p>Set the <code>--image</code> variable to an image or gradient that will be displayed on background images (more on that later in Elements > Layout)</p>
+    </details>
+  </main>
+</body>
+</html>
