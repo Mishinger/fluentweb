@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Test FluentWeb</title>
+</head>
+<body>
+  <header>
+    <h1>FluentWeb tester</h1>
+  </header>
+  
+  <main>
+    <section class="card">
+      <h2>Welcome to FluentWeb</h2>
+      <p>This is a simple test page to show off the FluentWeb design.</p>
+    </section>
+  
+    <section class="card">
+      <h3>Features</h3>
+      <ul>
+        <li>Modern UI components</li>
+        <li>Responsive design</li>
+        <li>Customizable themes</li>
+      </ul>
+    </section>
+  
+    <blockquote>
+    "FluentWeb makes web development a breeze!"
+    </blockquote>
+
+      <section class="card">
+        <input type="text" placeholder="CSS is no longer a problem..." /><br>
+        <input type="email" placeholder="Email" /><br>
+        <input type="password" placeholder="Password" /><br>
+        <input type="checkbox" id="agree" />
+        <label for="agree">I agree to the terms and conditions</label><br>
+      </section>
+
+      <section class="card">
+        <textarea rows="4" placeholder="Type your message here..."></textarea><br>
+      </section>
+
+      <section class="card">
+        <button class="accent">Click me!</button>
+        <button>Or me!</button>
+        <button class="text">Don't forget me!</button>
+        <button class="bad">Don't click me!</button>
+      </section>
+
+      <section class="card">
+        <details>
+          <summary>More info</summary>
+          <p>This section can be expanded to show more details. Useful in long info pages or settings!</p>
+        </details>
+      </section>
+
+      <section class="card">
+        <label for="range">Adjust the slider:</label>
+        <input type="range" id="range" min="0" max="100" value="50" />
+      </section>
+
+      <section class="card">
+        <label for="color">Pick a color:</label>
+        <input type="color" id="color" value="#ff0000" />
+      </section>
+
+      <section class="card">
+        <label for="select">Choose an option:</label>
+        <select id="select">
+          <option value="1">Windows</option>
+          <option value="2">macOS</option>
+          <option value="3">Linux</option>
+          <optgroup label="Other...">
+            <option value="4">chromeOS</option>
+            <option value="5">MS-DOS</option>
+            <option value="6">My OS isn't listed here!!!</option>
+          </optgroup>
+        </select>
+      </section>
+
+      <section class="card">
+        <input type="radio" id="radio1" name="group1" checked />
+        <label for="radio1">Apple</label><br>
+        <input type="radio" id="radio2" name="group1" />
+        <label for="radio2">Banana</label><br>
+        <input type="radio" id="radio3" name="group1" />
+        <label for="radio3">Cherry</label>
+      </section>
+
+      <section class="card">
+        <label for="file">Upload a file:</label>
+        <input type="file" id="file" />
+      </section>
+
+      <section class="card">
+      <label for="date">Select a date:</label>
+      <input type="date" id="date" />
+      <label for="time">Select a time:</label>
+      <input type="time" id="time" />
+      </section>
+
+      <section class="card">
+        <div class="codespace">def hello_world():
+            print("Hello, world!")
+        </div>
+      </section>
+
+      <section class="card">
+        <p>Making some progress...</p>
+        <progress value="50" max="100"></progress>
+        <p>Almost there!</p>
+        <div class="spinner"></div>
+        <p>I failed</p>
+        <div class="spinner fail"></div>
+      </section>
+
+      <section class="card">
+        <button onclick="document.getElementById('dialog').showModal()">Open dialog</button>
+        <dialog id="dialog">
+          <h3>Dialog</h3>
+          <p>This is a simple dialog box. Useful for confirmations and other stuff. Maybe login forms?</p>
+          <button onclick="document.getElementById('dialog').close()">OK</button>
+        </dialog>
+        <button onclick="document.getElementById('drawer').showModal()">Open drawer</button>
+        <dialog id="drawer" class="drawer right">
+          <h3>Drawer</h3>
+          <p>This is a simple drawer - it's cool, right?</p>
+          <button onclick="document.getElementById('drawer').close()">OK</button>
+        </dialog>
+      </section>
+
+      <section class="card">
+        <input type="text" name="entry-ok" id="entry-ok" placeholder="Enter text...">
+        <input type="text" name="entry-error" id="entry-error" class="error" placeholder="I'm not OK!">
+        <input type="text" name="entry-warning" id="entry-warning" class="warning" placeholder="Add a recovery phone number for security">
+        <input type="text" name="entry-success" id="entry-success" class="success" placeholder="Yay!!!">
+        <input type="text" name="entry-disabled" id="entry-disabled" disabled placeholder="I'm disabled :(">
+        <input type="text" name="entry-readonly" id="entry-readonly" readonly placeholder="You can't edit me">
+      </section>
+
+      <section class="card">
+        <div class="alert">
+          <h1>Alert</h1>
+          <p>I'm an alert you can use for various things...</p>
+        </div>
+        <div class="alert success">
+          <h1>Subscription activated</h1>
+          <p>Not really. this is free :)</p>
+        </div>
+        <div class="alert warning">
+          <h1>Signed in on a mac</h1>
+          <p>Did you sign in on a mac on 21.8.2025 19:41?</p>
+        </div>
+        <div class="alert bad">
+          <h1>Error</h1>
+          <p>Something went wrong.</p>
+        </div>
+      </section>
+  </main>
+</body>
+</html>

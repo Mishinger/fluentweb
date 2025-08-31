@@ -1,0 +1,343 @@
+:root {
+  --bg-color: #f9f9f9;
+  --text-color: #000;
+  --accent-text-color: #f9f9f9;
+  --accent: #0091ff;
+  --separator: #ccc;
+  --bg-image: none;
+  --blur-opacity: 0.8;
+  --blur-effect: blur(15px);
+
+  --bg-lighter: oklch(from var(--bg-color) calc(l * 1.1) c h);
+  --bg-darker: oklch(from var(--bg-color) calc(l * 0.9) c h);
+  --bg-dynamic: color-mix(in srgb, var(--bg-color) 90%, #888 10%);
+  --accent-lighter: oklch(from var(--accent) calc(l * 1.1) c h);
+  --accent-darker: oklch(from var(--accent) calc(l * 0.9) c h);
+  --weaker-separator: oklch(from var(--separator) l c h / 0.6);
+}
+
+/*
+NOTES
+- Change --bg-color to #f9f9f9 for light mode. Also update --text-color to #000 - you don't want your text to be invisible!
+- The --separator color may need some tweaking.
+- Some stuff may be missing.
+*/
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 40px;
+  background-color: var(--bg-dynamic);
+  border-bottom: 1px solid var(--separator);
+}
+
+main {
+  padding: 20px;
+  margin: auto;
+}
+
+main.image {
+  background-image: var(--bg-image);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+button {
+  background-color: transparent;
+  color: var(--text-color);
+  border: 1px solid var(--separator);
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 6px;
+  margin-top: 10px;
+}
+button:hover {
+  background-color: rgba(135, 135, 135, 0.15);
+}
+button.accent {
+  background-color: var(--accent);
+  color: var(--accent-text-color);
+  border: 1px solid var(--accent);
+  border-bottom: 1px solid var(--accent-darker);
+}
+button.accent:hover {
+  background-color: var(--accent-darker);
+  border: 1px solid var(--accent-darker);
+}
+button.text {
+  background-color: transparent;
+  color: var(--text-color);
+  border: none;
+}
+button.text:hover {
+  background-color: var(--bg-dynamic);
+  border: 1px solid var(--bg-dynamic);
+}
+button.bad {
+  background-color: rgb(255, 0, 0);
+  color: var(--accent-text-color);
+  border: 1px solid rgb(255, 0, 0);
+  border-bottom: 1px solid rgb(200, 0, 0);
+}
+button.bad:hover {
+  background-color: rgb(200, 0, 0);
+  border: 1px solid rgb(200, 0, 0);
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+footer {
+  background-color: var(--bg-lighter);
+  padding: 10px;
+  text-align: center;
+  border-top: 1px solid var(--separator);
+  margin-top: 10px;
+}
+
+input:not([type="checkbox"], [type="radio"], [type="submit"], [type="reset"], [type="color"], [type="range"]), select, textarea {
+  background-color: transparent;
+  color: var(--text-color);
+  border: 1px solid var(--weaker-separator);
+  border-radius: 6px;
+  border-bottom: 2px solid var(--separator);
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-bottom 0.3s ease;
+  margin-top: 10px;
+}
+input:not([type="checkbox"], [type="radio"], [type="submit"], [type="reset"], [type="color"], [type="range"]):focus, select:focus, textarea:focus {
+  border-bottom: 2px solid var(--accent);
+  outline: none;
+}
+
+textarea {
+  resize: none;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+textarea.codearea {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  accent-color: var(--accent);
+  background-color: transparent;
+  border-radius: 6px;
+  margin-top: 10px;
+}
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+}
+input[type="radio"] {
+  width: 20px;
+  height: 20px;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  -moz-appearance: none;
+  width: 100%;
+  height: 8px;
+  background: var(--bg-color);
+  border-radius: 6px;
+  outline: none;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+/* WebKit (Chrome, Safari, Edge) */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 20px;
+  width: 20px;
+  background: var(--accent);
+  border-radius: 50%;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+  margin-top: -6px; /* centers thumb vertically */
+  transition: background 0.3s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  background: var(--accent-darker);
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  height: 8px;
+  background: var(--bg-dynamic);
+  border-radius: 6px;
+}
+
+/* Firefox */
+input[type="range"]::-moz-range-thumb {
+  height: 20px;
+  width: 20px;
+  background: var(--accent);
+  border-radius: 50%;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+  transition: background 0.3s ease;
+}
+
+input[type="range"]::-moz-range-thumb:hover {
+  background: var(--accent-darker);
+}
+
+input[type="range"]::-moz-range-track {
+  height: 8px;
+  background: var(--bg-color);
+  border-radius: 6px;
+}
+
+input[type="color"] {
+  border: none;
+  background: transparent;
+  padding: 0;
+  margin-top: 10px;
+}
+
+input[type="submit"],
+input[type="reset"] {
+  background-color: var(--accent);
+  color: var(--text-color);
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 6px;
+  margin-top: 10px;
+}
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+  background-color: darken(var(--accent), 10%);
+}
+
+.card {
+  background-color: oklch(from var(--bg-color) l c h / var(--blur-opacity));
+  border-radius: 6px;
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  margin-top: 10px;
+}
+
+.card.blur {
+  backdrop-filter: blur(10px);
+  background-color: rgba(135, 135, 135, 0.1);
+  border-radius: 6px;
+  padding: 20px;
+  margin-top: 10px;
+}
+
+.separator {
+  border-top: 1px solid var(--separator);
+  margin: 20px 0;
+}
+
+.separator.secondary {
+  border-top: 1px solid var(--weaker-separator);
+  margin: 20px 0;
+}
+
+details {
+  border-radius: 6px;
+  padding: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+label {
+  margin-top: 15px;
+  color: var(--text-color);
+  display: inline-block;
+}
+
+dialog {
+  background-color: oklch(from var(--bg-color) l c h / var(--blur-opacity));
+  border: none;
+  border-radius: 8px;
+  padding: 20px;
+  color: var(--text-color);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin: 20px;
+  outline: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+}
+
+code {
+  background-color: var(--bg-darker);
+  color: var(--text-color);
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.codespace {
+  white-space: pre-wrap;
+  background-color: var(--bg-darker);
+  color: var(--text-color);
+  padding: 10px;
+  border-radius: 6px;
+  font-family: 'Courier New', Courier, monospace;
+  overflow-x: auto;
+  margin-top: 10px;
+}
+
+.highlight {
+  background-color: var(--bg-dynamic);
+  color: var(--text-color);
+  padding: 5px;
+  border-radius: 6px;
+}
+
+blockquote {
+  border-left: 4px solid var(--accent);
+  padding: 10px 20px;
+  background-color: oklch(from var(--bg-darker) l c h / var(--blur-opacity));
+  backdrop-filter: var(--blur-effect);
+  color: var(--text-color);
+  margin: 20px 0;
+}
+
+progress {
+  width: 100%;
+  height: 20px;
+  accent-color: var(--accent);
+  border-radius: 6px;
+}
+
+progress::-webkit-progress-bar {
+  background-color: var(--bg-dynamic);
+  border-radius: 6px;
+}
+
+progress::-webkit-progress-value {
+  background-color: var(--accent);
+  border-radius: 6px;
+}
