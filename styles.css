@@ -259,7 +259,7 @@ textarea {
 }
 
 textarea.codearea {
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'JetBrains Mono', monospace;
 }
 
 select, input[type="file"], input[type="radio"], input[type="checkbox"] {
@@ -490,7 +490,7 @@ code {
   color: var(--text-color);
   padding: 5px 10px;
   border-radius: 6px;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'JetBrains Mono', monospace;
 }
 
 .codespace {
@@ -500,7 +500,7 @@ code {
   color: var(--text-color);
   padding: 10px;
   border-radius: 6px;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'JetBrains Mono', monospace;
   overflow-x: auto;
   margin-top: 10px;
 }
@@ -628,7 +628,7 @@ dialog.drawer.right {
 
 .tabber .tab-buttons {
   display: flex;
-  gap: 1rem;
+  gap: 5px;
 }
 
 .tabber .tab-btn {
@@ -637,9 +637,10 @@ dialog.drawer.right {
   cursor: pointer;
   font-weight: 600;
   position: relative;
-  border-bottom: 3px solid transparent;
   border-radius: 9999px;
-  transition: border-bottom-color 0.2s;
+  transition: 0.2s ease;
+  border: 1px solid var(--separator);
+  padding: 5px 10px;
 
   &:hover {
     background-color: var(--separator);
@@ -647,6 +648,7 @@ dialog.drawer.right {
 
   &.active {
     background-color: var(--text-color);
+    border-color: var(--text-color);
     color: var(--accent-text);
   }
 }
