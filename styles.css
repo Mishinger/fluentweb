@@ -46,7 +46,7 @@
   }
 }
 
-/*   v1.0   */
+/*   v1.1   */
 
 * {
   box-sizing: border-box;
@@ -129,6 +129,11 @@ button:hover {
   }
   button:hover {
     background-color: var(--element-bg);
+  }
+}
+@media (prefers-color-scheme: light) {
+  button {
+    border-bottom-width: 2px;
   }
 }
 button.accent {
@@ -633,16 +638,16 @@ dialog.drawer.right {
   font-weight: 600;
   position: relative;
   border-bottom: 3px solid transparent;
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
+  border-radius: 9999px;
   transition: border-bottom-color 0.2s;
 
   &:hover {
-    border-bottom-color: var(--separator);
+    background-color: var(--separator);
   }
 
   &.active {
-    border-bottom-color: var(--accent);
+    background-color: var(--text-color);
+    color: var(--accent-text);
   }
 }
 
@@ -769,14 +774,31 @@ dialog.drawer.right {
   color: var(--text-color);
 }
 
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  padding: 12px;
+}
+
+th {
+  text-align: left;
+}
+
+tr:not(:last-child), thead tr {
+  border-bottom: 1px solid var(--separator);
+}
 
 
-.utils-width-full {
+
+.width-full {
   box-sizing: border-box;
   margin-right: 0;
   margin-left: 0;
 }
 
-.utils-width-default {
-  box-sizing: inherit;
+.width-default {
+  box-sizing: initial;
 }
