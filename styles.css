@@ -5,6 +5,7 @@
   --text-color: #000;
   --accent: #0048e4;
   --accent-text: #fff;
+  --contrast-text: #fff;
   --separator: #ccc;
   --input-border: #777;
   --code-bg: #ddd;
@@ -20,6 +21,7 @@
     --card-bg: #1c1c1c;
     --element-bg: #222;
     --text-color: #fff;
+    --contrast-text: #000;
     --separator: #555;
     --input-border: #999;
     --code-bg: #000;
@@ -36,6 +38,7 @@
     --card-bg: #f9f9f9;
     --element-bg: #f5f5f5;
     --text-color: #000;
+   --contrast-text: #fff;
     --separator: #ccc;
     --input-border: #777;
     --code-bg: #eee;
@@ -70,6 +73,7 @@ body.image {
 header {
   border-bottom: 1px solid var(--separator);
   padding: 20px;
+  background-color: var(--card-bg);
 }
 
 main {
@@ -613,6 +617,7 @@ dialog.drawer.right {
   width: min(400px, 100vw);
   height: 100vh;
   border-right: 1px solid var(--separator);
+  background-color: var(--card-bg);
   padding: 0 10px 10px 10px;
 }
 
@@ -649,7 +654,7 @@ dialog.drawer.right {
   &.active {
     background-color: var(--text-color);
     border-color: var(--text-color);
-    color: var(--accent-text);
+    color: var(--contrast-text);
   }
 }
 
@@ -779,6 +784,7 @@ dialog.drawer.right {
 table {
   border-collapse: collapse;
   width: 100%;
+  border-radius: 6px;
 }
 
 td, th {
@@ -793,7 +799,13 @@ tr:not(:last-child), thead tr {
   border-bottom: 1px solid var(--separator);
 }
 
+tr.clickable {
+  cursor: pointer;
 
+  &:hover {
+    background-color: var(--separator);
+  }
+}
 
 .width-full {
   box-sizing: border-box;
