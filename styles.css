@@ -74,6 +74,18 @@ header {
   border-bottom: 1px solid var(--separator);
   padding: 20px;
   background-color: var(--card-bg);
+
+  & nav {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+
+    & a {
+      color: color-mix(in srgb, var(--text-color) 75%, var(--accent) 25%);
+    }
+  }
 }
 
 main {
@@ -806,6 +818,23 @@ tr.clickable {
     background-color: var(--separator);
   }
 }
+
+.split-stack {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+@media (max-width: 600px) {
+  .split-stack {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+}
+
+
 
 .width-full {
   box-sizing: border-box;
