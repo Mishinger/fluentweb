@@ -141,7 +141,7 @@ button:hover {
 }
 @media (prefers-color-scheme: dark) {
   button {
-    background-color: transparent;
+    background-color: var(--background);
   }
   button:hover {
     background-color: var(--element-bg);
@@ -169,7 +169,8 @@ button.text {
   transition: border 0.3s ease;
 }
 button.text:hover {
-  border-color: var(--separator);
+  border-color: var(--code-bg);
+  background-color: var(--code-bg);
 }
 button.bad {
   color: var(--accent-text);
