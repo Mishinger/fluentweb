@@ -1012,6 +1012,22 @@ tr.clickable {
   margin-top: 0;
 }
 
+.setup-wizard {
+  max-width: 600px;
+  min-height: 450px;
+  padding: 20px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  
+  & .content {
+    flex: 1;
+    width: 100%;
+  }
+}
+
 .width-full {
   box-sizing: border-box;
   margin-right: 0;
@@ -1024,5 +1040,4 @@ tr.clickable {
 
 .card > *:first-child, main > *:first-child, dialog > *:first-child {
   margin-top: 0;
-
 }
