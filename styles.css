@@ -124,6 +124,9 @@ header {
   border-bottom: 1px solid var(--separator);
   padding: 20px;
   background-color: var(--card-bg);
+  display: flex;
+  align-items: center;
+  gap: 15px;
 
   & nav {
     display: flex;
@@ -1021,4 +1024,5 @@ tr.clickable {
 
 .card > *:first-child, main > *:first-child, dialog > *:first-child {
   margin-top: 0;
+
 }
