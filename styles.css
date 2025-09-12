@@ -24,12 +24,14 @@
     --card-bg: #1c1c1c;
     --element-bg: #222;
     --text-color: #fff;
+    --accent: #00c3ff;
+    --accent-text: #222;
     --contrast-text: #000;
     --separator: #555;
     --input-border: #999;
     --code-bg: #000;
-    --danger-color: #f44;
-    --success-color: #5c5;
+    --danger-color: #f66;
+    --success-color: #7c7;
     --warning-color: #fb5;
     --image: none;
   }
@@ -63,6 +65,8 @@
   --card-bg: #1c1c1c;
   --element-bg: #222;
   --text-color: #fff;
+  --accent: #00c3ff;
+  --accent-text: #222;
   --contrast-text: #000;
   --separator: #555;
   --input-border: #999;
@@ -82,7 +86,9 @@
     --card-bg: #f9f9f9;
     --element-bg: #f5f5f5;
     --text-color: #000;
-   --contrast-text: #fff;
+    --accent: #0048e4;
+    --accent-text: #fff;
+    --contrast-text: #fff;
     --separator: #ccc;
     --input-border: #777;
     --code-bg: #eee;
@@ -185,10 +191,7 @@ button:hover {
 }
 @media (prefers-color-scheme: dark) {
   button {
-    background-color: var(--background);
-  }
-  button:hover {
-    background-color: var(--element-bg);
+    border-top: 1px solid color-mix(in srgb, var(--input-border) 35%, var(--separator) 65%);
   }
 }
 @media (prefers-color-scheme: light) {
@@ -202,8 +205,8 @@ button.accent {
   border-color: var(--accent);
 }
 button.accent:hover {
-  background-color: color-mix(in srgb, var(--accent) 85%, var(--accent-text) 15%);
-  border-color: color-mix(in srgb, var(--accent) 85%, var(--accent-text) 15%);
+  background-color: color-mix(in srgb, var(--accent) 85%, var(--text-color) 15%);
+  border-color: color-mix(in srgb, var(--accent) 85%, var(--text-color) 15%);
 }
 button.text {
   background-color: transparent;
@@ -216,14 +219,22 @@ button.text:hover {
   border-color: var(--code-bg);
   background-color: var(--code-bg);
 }
+@media (prefers-color-scheme: dark) {
+  button.text:hover {
+    color: var(--text-color);
+    border: 1px solid var(--separator);
+    background-color: var(--element-bg);
+    border-top: 1px solid color-mix(in srgb, var(--input-border) 35%, var(--separator) 65%);
+  }
+}
 button.bad {
   color: var(--accent-text);
   background-color: var(--danger-color);
   border-color: var(--danger-color);
 }
 button.bad:hover {
-  background-color: color-mix(in srgb, var(--danger-color) 85%, var(--accent-text) 15%);
-  border-color: color-mix(in srgb, var(--danger-color) 85%, var(--accent-text) 15%);
+  background-color: color-mix(in srgb, var(--danger-color) 85%, var(--text-color) 15%);
+  border-color: color-mix(in srgb, var(--danger-color) 85%, var(--text-color) 15%);
 }
 button.warning {
   color: var(--accent-text);
@@ -231,8 +242,8 @@ button.warning {
   border-color: var(--warning-color);
 }
 button.warning:hover {
-  background-color: color-mix(in srgb, var(--warning-color) 85%, var(--accent-text) 15%);
-  border-color: color-mix(in srgb, var(--warning-color) 85%, var(--accent-text) 15%);
+  background-color: color-mix(in srgb, var(--warning-color) 85%, var(--text-color) 15%);
+  border-color: color-mix(in srgb, var(--warning-color) 85%, var(--text-color) 15%);
 }
 button.success {
   color: var(--accent-text);
@@ -240,8 +251,8 @@ button.success {
   border-color: var(--success-color);
 }
 button.success:hover {
-  background-color: color-mix(in srgb, var(--success-color) 85%, var(--accent-text) 15%);
-  border-color: color-mix(in srgb, var(--success-color) 85%, var(--accent-text) 15%);
+  background-color: color-mix(in srgb, var(--success-color) 85%, var(--text-color) 15%);
+  border-color: color-mix(in srgb, var(--success-color) 85%, var(--text-color) 15%);
 }
 button.icon {
   width: 50px;
@@ -267,6 +278,16 @@ input:not([type="checkbox"], [type="radio"], [type="submit"], [type="reset"], [t
   background-color: transparent;
 }
 
+@media (prefers-color-scheme: light) {
+  input:not([type="checkbox"], [type="radio"], [type="submit"], [type="reset"], [type="color"], [type="range"]), select, textarea {
+    background-color: var(--element-bg);
+
+    &:hover {
+      background-color: transparent;
+    }
+  }
+}
+
 input:not([type="checkbox"], [type="radio"], [type="submit"], [type="reset"], [type="color"], [type="range"]):hover, select:hover, textarea:hover {
   background-color: var(--element-bg);
 }
@@ -275,6 +296,14 @@ input:not([type="checkbox"], [type="radio"], [type="submit"], [type="reset"], [t
   border-bottom: 2px solid var(--accent);
   outline: none;
   background-color: transparent;
+}
+
+@media (prefers-color-scheme: light) {
+  input:not([type="checkbox"], [type="radio"], [type="submit"], [type="reset"], [type="color"], [type="range"]), select, textarea {
+    &:focus {
+      background-color: var(--element-bg);
+    }
+  }
 }
 
 input:not([type="checkbox"], [type="radio"], [type="submit"], [type="reset"], [type="color"], [type="range"]).error, select.error, textarea.error {
@@ -414,7 +443,7 @@ input[type="range"] {
   cursor: pointer;
 }
 
-/* WebKit (Chrome, Safari, Edge) */
+/* WebKit (Safari, Edge) */
 input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
   height: 20px;
@@ -507,7 +536,12 @@ input[type="reset"]:hover {
 
 .separator.secondary {
   border-top: 1px solid oklch(from var(--separator) l c h / 0.5);
-  margin: 20px 0;
+}
+
+.separator.vertical {
+  border-left: 1px solid var(--separator);
+  height: 100%;
+  margin: 0 10px;
 }
 
 details {
@@ -550,7 +584,6 @@ dialog {
 
 dialog::backdrop {
   background-color: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(4px);
 }
 
 code {
@@ -605,6 +638,34 @@ progress::-webkit-progress-bar {
 
 progress::-webkit-progress-value {
   background-color: var(--accent);
+  border-radius: 6px;
+}
+
+meter {
+  width: 100%;
+  height: 20px;
+  accent-color: var(--accent);
+  border-radius: 6px;
+  appearance: none;
+}
+
+meter::-webkit-meter-bar {
+  background-color: var(--separator);
+  border-radius: 6px;
+}
+
+meter::-webkit-meter-optimum-value {
+  background-color: var(--accent);
+  border-radius: 6px;
+}
+
+meter::-webkit-meter-suboptimum-value {
+  background-color: var(--warning-color);
+  border-radius: 6px;
+}
+
+meter::-webkit-meter-even-less-good-value {
+  background-color: var(--danger-color);
   border-radius: 6px;
 }
 
@@ -836,42 +897,36 @@ dialog.drawer.right {
 
 .alert {
   color: var(--text-color);
-  border: 1px solid var(--accent);
   border-radius: 6px;
   margin-top: 10px;
-  padding-left: 1em;
-  padding-right: 1em;
-  padding-bottom: 1em;
+  padding: 3px 10px;
   background: oklch(from var(--accent) l c h / 0.1);
-}
-.alert h1, .alert h2, .alert h3, .alert h4, .alert h5, .alert h6 {
   color: var(--accent);
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+
+  * button {
+    margin-top: 0;
+  }
 }
 
 .alert.success {
   color: var(--text-color);
-  border: 1px solid var(--success-color);
   background: oklch(from var(--success-color) l c h / 0.1);
-}
-.alert.success h1, .alert.success h2, .alert.success h3, .alert.success h4, .alert.success h5, .alert.success h6 {
   color: var(--success-color);
 }
 
 .alert.warning {
   color: var(--text-color);
-  border: 1px solid var(--warning-color);
   background: oklch(from var(--warning-color) l c h / 0.1);
-}
-.alert.warning h1, .alert.warning h2, .alert.warning h3, .alert.warning h4, .alert.warning h5, .alert.warning h6 {
   color: var(--warning-color);
 }
 
 .alert.bad {
   color: var(--text-color);
-  border: 1px solid var(--danger-color);
   background: oklch(from var(--danger-color) l c h / 0.1);
-}
-.alert.bad h1, .alert.bad h2, .alert.bad h3, .alert.bad h4, .alert.bad h5, .alert.bad h6 {
   color: var(--danger-color);
 }
 
