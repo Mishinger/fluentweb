@@ -3,7 +3,7 @@
   --card-bg: #fafafa;
   --element-bg: #fff;
   --text-color: #000;
-  --accent: #0048e4;
+  --accent: #3713ba;
   --accent-text: #fff;
   --contrast-text: #fff;
   --separator: #ccc;
@@ -12,7 +12,7 @@
   --danger-color: #f11;
   --success-color: #3a3;
   --warning-color: #fa3;
-  --image: none;
+  --image: url("bglight.png");
 }
 * {
   color-scheme: light;
@@ -24,7 +24,7 @@
     --card-bg: #1c1c1c;
     --element-bg: #222;
     --text-color: #fff;
-    --accent: #00c3ff;
+    --accent: #00bfff;
     --accent-text: #222;
     --contrast-text: #000;
     --separator: #555;
@@ -33,7 +33,7 @@
     --danger-color: #f66;
     --success-color: #7c7;
     --warning-color: #fb5;
-    --image: none;
+    --image: url("bgdark.png");
   }
   * {
     color-scheme: dark;
@@ -45,7 +45,7 @@
   --card-bg: #fafafa;
   --element-bg: #fff;
   --text-color: #000;
-  --accent: #0048e4;
+  --accent: #3713ba;
   --accent-text: #fff;
   --contrast-text: #fff;
   --separator: #ccc;
@@ -54,7 +54,7 @@
   --danger-color: #f11;
   --success-color: #3a3;
   --warning-color: #fa3;
-  --image: none;
+  --image: url("bglight.png");
   * {
     color-scheme: light;
   }
@@ -65,7 +65,7 @@
   --card-bg: #1c1c1c;
   --element-bg: #222;
   --text-color: #fff;
-  --accent: #00c3ff;
+  --accent: #00bfff;
   --accent-text: #222;
   --contrast-text: #000;
   --separator: #555;
@@ -74,7 +74,7 @@
   --danger-color: #f44;
   --success-color: #5c5;
   --warning-color: #fb5;
-  --image: none;
+  --image: url("bgdark.png");
   * {
     color-scheme: dark;
   }
@@ -86,7 +86,7 @@
     --card-bg: #f9f9f9;
     --element-bg: #f5f5f5;
     --text-color: #000;
-    --accent: #0048e4;
+    --accent: #3713ba;
     --accent-text: #fff;
     --contrast-text: #fff;
     --separator: #ccc;
@@ -129,6 +129,7 @@ header {
   gap: 15px;
 
   & nav {
+    margin-left: auto;
     display: flex;
     gap: 15px;
     flex-wrap: wrap;
@@ -137,6 +138,10 @@ header {
 
     & a {
       color: color-mix(in srgb, var(--text-color) 75%, var(--accent) 25%);
+    }
+
+    & button {
+      margin: 0;
     }
   }
 }
@@ -1019,11 +1024,9 @@ tr.clickable {
   margin: auto;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: space-between;
   
   & .content {
-    flex: 1;
     width: 100%;
   }
 }
